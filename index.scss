@@ -1,0 +1,15 @@
+$ballColors: #d02e0c, #f9ff60, #cdedfd, #ffcfd2, #e5f77d, #dc9e82;
+
+section {
+    @for $i from 1 to 100 {
+        &:nth-child(#{$i}) {
+            $ballColor: ceil(random() * 6);
+            background-color: nth($ballColors, $ballColor);
+            $x: random() * 100vw;
+            $y: random() * 100vh;
+            transform: translate($x, $y);
+            animation-duration: random() * 2s + 1s;
+            animation-delay: random() * -2s;
+        }
+    }
+}
